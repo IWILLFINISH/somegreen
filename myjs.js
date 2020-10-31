@@ -10,9 +10,9 @@ $( document ).ready(function() {
 });
 
 function signIn() {
-	firebase.auth().signInWithRediect(provider).then(function(result) {
+	firebase.auth().signInWithPoup(provider).then(function(result) {
 	  // This gives you a Google Access Token. You can use it to access the Google API.
-	  var token = result.user.uid;
+	  var token = result.credential.accessToken;
 	  // The signed-in user info.
 	  user = result.user;
 	  showWelcomeContainer();
