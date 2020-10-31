@@ -95,7 +95,7 @@ function showWelcomeContainer() {
 	$(".upload-group").show();
 	$("#welcomeText").html("Привет, " + user.displayName);
 };
-ы
+
 $(".dropdown").on("hide.bs.dropdown", function(event){
     var text = $(event.relatedTarget).text(); // Get the text of the element
     $("#dogDrop").html(text+'<span class="caret"></span>');
