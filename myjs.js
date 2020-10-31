@@ -14,7 +14,7 @@ function signIn() {
 	  // This gives you a Google Access Token. You can use it to access the Google API.
 	  var token = result.credential.accessToken;
 	  // The signed-in user info.
-	  user = result.user;
+	  var user = result.user;
 	  showWelcomeContainer();
 	  sessionStorage.token = token;
 	  // ...
@@ -28,6 +28,9 @@ function signIn() {
 	  var credential = error.credential;
 	  // ...
 		console.log(user)
+		provider.setCustomParameters({
+    'name': 'Введите ваше имя'
+});
 		// Step 1.
 // User tries to sign in to Google.
 auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).catch(function(error) {
@@ -92,7 +95,7 @@ function showWelcomeContainer() {
 	$(".upload-group").show();
 	$("#welcomeText").html("Привет, " + user.displayName);
 };
-
+ы
 $(".dropdown").on("hide.bs.dropdown", function(event){
     var text = $(event.relatedTarget).text(); // Get the text of the element
     $("#dogDrop").html(text+'<span class="caret"></span>');
