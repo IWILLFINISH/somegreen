@@ -93,7 +93,7 @@ function showWelcomeContainer() {
 	$("#login").hide();
 	$("#welcome").show();
 	$(".upload-group").show();
-	$("#welcomeText").html("Привет, " + user.displayName);
+	$("#welcomeText").html("Привет, смельчак!";
 };
 
 $(".dropdown").on("hide.bs.dropdown", function(event){
