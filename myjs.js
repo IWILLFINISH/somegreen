@@ -140,6 +140,7 @@ function uploadFile() {
 	  };
 	  updates['/Posts/'+postKey] = postData;
 	  firebase.database().ref().update(updates);
+		alert("Изображение отправлено!")
 	});
 
 }
