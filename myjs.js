@@ -1,5 +1,5 @@
 var provider = new firebase.auth.GoogleAuthProvider();
-var user =  firebase.auth().currentUser;
+var user;
 var selectedFile;
 var database = firebase.database();
 
@@ -113,21 +113,26 @@ function showWelcomeContainer() {
 	$("#login").hide();
 	$("#welcome").show();
 	$(".upload-group").show();
-	$("#welcomeText").html("Привет, " + user.displayName);
+	$("#welcomeText").html("Привет, " + user.email);
 };
 
 $(".dropdown").on("hide.bs.dropdown", function(event){
     var text = $(event.relatedTarget).text(); // Get the text of the element
     $("#dogDrop").html(text+'<span class="caret"></span>');
-		if (user != null) {
     firebase.database().ref('Users/' + user.uid).set({
     	name: user.displayName,
     	email: user.email,
     	favDog: text
-		} else {
-		var name =	prompt("Как вас зовут?")
-		}
   	});
+		firebase
+		      .auth()
+		      .createUserWithEmailAndPassword(newUser.email, newUser.password)
+		      .then((res) => {
+		        const user = firebase.auth().currentUser;
+		        return user.updateProfile({
+		          displayName: newUser.name
+		        })
+		      })
 
 });
 
