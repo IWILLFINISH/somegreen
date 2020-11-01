@@ -93,14 +93,14 @@ function showWelcomeContainer() {
 	$("#login").hide();
 	$("#welcome").show();
 	$(".upload-group").show();
-	$("#welcomeText").html("Привет, " + user.getDisplayName);
+	$("#welcomeText").html("Привет, " + user.displayName);
 };
 
 $(".dropdown").on("hide.bs.dropdown", function(event){
     var text = $(event.relatedTarget).text(); // Get the text of the element
     $("#dogDrop").html(text+'<span class="caret"></span>');
     firebase.database().ref('Users/' + user.uid).set({
-    	name: user.getDisplayName,
+    	name: user.displayName,
     	email: user.email,
     	favDog: text
   	});
@@ -144,3 +144,4 @@ function uploadFile() {
 	});
 
 }
+concole.log(user.email)
