@@ -1,7 +1,7 @@
 var provider = new firebase.auth.GoogleAuthProvider();
 var user;
 var selectedFile;
-
+var database = firebase.database();
 
 $( document ).ready(function() {
 	$("#welcome").hide();
@@ -144,4 +144,4 @@ function uploadFile() {
 	});
 
 }
-alert(user.email)
+alertr(user.email)
