@@ -113,13 +113,13 @@ function showWelcomeContainer() {
 	$("#login").hide();
 	$("#welcome").show();
 	$(".upload-group").show();
-	$("#welcomeText").html("Приветики, " + user.displayName);
+	$("#welcomeText").html("Привет, " + user.displayName);
 };
 
 $(".dropdown").on("hide.bs.dropdown", function(event){
     var text = $(event.relatedTarget).text(); // Get the text of the element
     $("#dogDrop").html(text+'<span class="caret"></span>');
-		if (iser != null) {
+		if (user != null) {
     firebase.database().ref('Users/' + user.uid).set({
     	name: user.displayName,
     	email: user.email,
