@@ -93,7 +93,7 @@ function showWelcomeContainer() {
 	$("#login").hide();
 	$("#welcome").show();
 	$(".upload-group").show();
-	$("#welcomeText").html("Привет, дружище!"");
+	$("#welcomeText").html("Привет, дружище!");
 };
 
 $(".dropdown").on("hide.bs.dropdown", function(event){
