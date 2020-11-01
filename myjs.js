@@ -113,6 +113,7 @@ $("#file").on("change", function(event) {
 });
 
 function uploadFile() {
+		alert("Изображение отправлено! ")
 	// Create a root reference
 	var filename = selectedFile.name;
 	var storageRef = firebase.storage().ref('/dogImages/' + filename);
@@ -140,7 +141,7 @@ function uploadFile() {
 	  };
 	  updates['/Posts/'+postKey] = postData;
 	  firebase.database().ref().update(updates);
-		alert("Изображение отправлено! ")
+
 	});
 
 }
