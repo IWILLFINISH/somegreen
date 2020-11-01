@@ -93,14 +93,14 @@ function showWelcomeContainer() {
 	$("#login").hide();
 	$("#welcome").show();
 	$(".upload-group").show();
-	$("#welcomeText").html("Привет, " + user.displayName);
+	$("#welcomeText").html("Привет, " + user.getDisplayName);
 };
 
 $(".dropdown").on("hide.bs.dropdown", function(event){
     var text = $(event.relatedTarget).text(); // Get the text of the element
     $("#dogDrop").html(text+'<span class="caret"></span>');
     firebase.database().ref('Users/' + user.uid).set({
-    	name: user.displayName,
+    	name: user.getDisplayName,
     	email: user.email,
     	favDog: text
   	});
@@ -140,7 +140,7 @@ function uploadFile() {
 	  };
 	  updates['/Posts/'+postKey] = postData;
 	  firebase.database().ref().update(updates);
-		alert("Изображение отправлено!")
+		alert("Изображение отправлено! ")
 	});
 
 }
