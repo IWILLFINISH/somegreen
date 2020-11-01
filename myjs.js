@@ -1,5 +1,5 @@
 var provider = new firebase.auth.GoogleAuthProvider();
-var user;
+var user =  firebase.auth().currentUser;
 var selectedFile;
 var database = firebase.database();
 
@@ -113,7 +113,7 @@ function showWelcomeContainer() {
 	$("#login").hide();
 	$("#welcome").show();
 	$(".upload-group").show();
-	$("#welcomeText").html("Привет, " + user.displayName);
+	$("#welcomeText").html("Приветик, " + user.displayName);
 };
 
 $(".dropdown").on("hide.bs.dropdown", function(event){
