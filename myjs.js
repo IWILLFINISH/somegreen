@@ -144,4 +144,4 @@ function uploadFile() {
 	});
 
 }
-concole.log(user.email)
+alert(user.email)
