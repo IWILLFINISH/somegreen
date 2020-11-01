@@ -113,7 +113,7 @@ function showWelcomeContainer() {
 	$("#login").hide();
 	$("#welcome").show();
 	$(".upload-group").show();
-	$("#welcomeText").html("Привет, " + user.email);
+	$("#welcomeText").html("Привет, " + user.displayName);
 };
 
 $(".dropdown").on("hide.bs.dropdown", function(event){
