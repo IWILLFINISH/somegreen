@@ -123,6 +123,9 @@ $(".dropdown").on("hide.bs.dropdown", function(event){
     	name: user.displayName,
     	email: user.email,
     	favDog: text
+		if (user.displayName ==== null) {
+			user.displayName === 'Храбрец'
+		};
   	});
 		firebase
 		      .auth()
