@@ -113,7 +113,7 @@ function showWelcomeContainer() {
 	$("#login").hide();
 	$("#welcome").show();
 	$(".upload-group").show();
-	$("#welcomeText").html("Привет, " + user.displayName);
+	$("#welcomeText").html("Привет!"");
 };
 
 $(".dropdown").on("hide.bs.dropdown", function(event){
@@ -123,9 +123,7 @@ $(".dropdown").on("hide.bs.dropdown", function(event){
     	name: user.displayName,
     	email: user.email,
     	favDog: text
-		if (user.displayName ==== null) {
-			user.displayName === 'Храбрец'
-		};
+
   	});
 		firebase
 		      .auth()
