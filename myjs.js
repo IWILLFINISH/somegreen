@@ -119,7 +119,6 @@ function showWelcomeContainer() {
 $(".dropdown").on("hide.bs.dropdown", function(event){
     var text = $(event.relatedTarget).text(); // Get the text of the element
   
-  	});
 		firebase
 		      .auth()
 		      .createUserWithEmailAndPassword(newUser.email, newUser.password)
